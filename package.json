@@ -4,6 +4,7 @@
   "description": "a11yMTL website built with the base eleventy template",
   "scripts": {
     "build": "npm-run-all sass-build --parallel eleventy",
+    "gh-build": "npm-run-all sass-build --parallel gh-pages",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "sass-start": "sass scss/styles.scss _site/css/a11ymtl.css",
     "sass-build": "sass --style=compressed scss/styles.scss _site/css/a11ymtl.css",
@@ -11,7 +12,8 @@
     "watch:eleventy": "npx @11ty/eleventy --watch",
     "serve": "npx @11ty/eleventy --serve",
     "start": "npm-run-all sass-start --parallel watch:*",
-    "debug": "DEBUG=* npx @11ty/eleventy"
+    "debug": "DEBUG=* npx @11ty/eleventy",
+    "gh-pages": "npx @11ty/eleventy --pathprefix=/a11ymtl/"
   },
   "repository": {
     "type": "git",
