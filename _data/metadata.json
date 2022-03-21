@@ -1,10 +1,10 @@
 {
   "title": "a11yMTL",
   "url": "https://a11ymtl.net/",
-  "language": "en",
-  "description": "The accessibility community in Montreal",
+  "language": "fr",
+  "description": "La communauté de l'accessibilité à Montréal",
   "feed": {
-    "subtitle": "The accessibility community in Montreal",
+    "subtitle": "La communauté de l'accessibilité à Montréal",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://a11ymtl.net/"
@@ -16,6 +16,6 @@
   "author": {
     "name": "a11yMTL",
     "email": "a11ymtl@gmail.com",
-    "url": "https://a11ymtl.net/about/"
+    "url": "https://a11ymtl.net/apropos/"
   }
 }
