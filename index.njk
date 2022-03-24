@@ -5,7 +5,7 @@ eleventyNavigation:
   order: 1
 ---
 {% set maxPosts = collections.posts.length | min(3) %}
-<h1>{% if maxPosts == 1 %}Le dernier événement{% else %}{{ maxPosts }}Les derniers événements{% endif %}</h1>
+<h1>{% if maxPosts == 1 %}Le dernier événement{% else %}Les {{ maxPosts }} derniers événements{% endif %}</h1>
 
 {% set postslist = collections.posts | head(-3) %}
 {% set postslistCounter = collections.posts | length %}
