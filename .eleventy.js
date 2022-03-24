@@ -16,8 +16,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
 
-  eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
+  eleventyConfig.addFilter("readableDateEn", dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("LLLL dd yyyy");
+  });
+
+  eleventyConfig.addFilter("readableDateFr", dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).setLocale("fr").toFormat("dd LLLL yyyy");
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string

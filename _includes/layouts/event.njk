@@ -4,11 +4,13 @@ templateClass: tmpl-event
 ---
 <h1>{{ title }}</h1>
 
-<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDateFr }}</time>
 {%- for tag in tags | filterTagList -%}
 {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
 <a href="{{ tagUrl | url }}" class="event-tag">{{ tag }}</a>
 {%- endfor %}
+
+<p>{{ description | safe}}</p>
 
 {{ content | safe }}
 
