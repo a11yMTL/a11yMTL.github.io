@@ -1,7 +1,7 @@
 ---
-layout: layouts/post.njk
+layout: layouts/event.njk
 title: À propos de nous
-templateClass: tmpl-post
+templateClass: tmpl-event
 eleventyNavigation:
   key: À propos de nous
   order: 3
