@@ -6,12 +6,11 @@
     "build": "npm-run-all sass-build --parallel eleventy",
     "gh-build": "npm-run-all sass-build --parallel gh-pages",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-    "sass-start": "sass scss/styles.scss _site/css/a11ymtl.css",
+    "watch:sass:": "sass scss/styles.scss _site/css/a11ymtl.css",
     "sass-build": "sass --style=compressed scss/styles.scss _site/css/a11ymtl.css",
     "eleventy": "npx eleventy",
-    "watch:eleventy": "npx @11ty/eleventy --watch",
-    "serve": "npx @11ty/eleventy --serve",
-    "start": "npm-run-all sass-start --parallel watch:*",
+    "watch:eleventy": "npx @11ty/eleventy --serve",
+    "start": "npm-run-all --parallel watch:*",
     "debug": "DEBUG=* npx @11ty/eleventy",
     "gh-pages": "npx @11ty/eleventy --pathprefix=/a11ymtl/"
   },
@@ -22,7 +21,7 @@
   "author": {
     "name": "a11yMTL",
     "email": "a11ymtl@gmail.com",
-    "url": "a11ymtl.net"
+    "url": "https://a11ymtl.net"
   },
   "license": "MIT",
   "bugs": {
