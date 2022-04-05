@@ -12,5 +12,5 @@ meetupURL:
 tags: # insert as many tags as you think are relevant to the event
   - meetup
   - event
-layout: layouts/event.njk
+layout: layouts/base.njk
 ---

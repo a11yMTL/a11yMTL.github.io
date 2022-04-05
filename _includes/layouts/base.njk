@@ -1,34 +1,43 @@
-<!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or metadata.title }}</title>
-    <meta name="description" content="{{ description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/css/a11ymtl.css' | url }}">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
-    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
-  </head>
+  {% include "partials/head.njk" %}
   <body>
-    <header>
-      <p class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></p>
 
-      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      <ul class="nav">
-      {%- for entry in collections.all | eleventyNavigation %}
-        <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
-      {%- endfor %}
-      </ul>
-    </header>
+    {% include "partials/header.njk" %}
 
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
 
       <h1>{{ title }}</h1>
 
+      {% if tag == event %}
+
+        <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDateFr }}</time>
+        <ul>
+        {%- for tag in tags | filterTagList -%}
+        {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+        <li><a href="{{ tagUrl | url }}" class="event-tag">{{ tag }}</a></li>
+        {%- endfor %}
+        </ul>
+
+      {% endif %}
+
       <p>{{ description | safe }}</p>
 
-
       {{ content | safe }}
+
+{% if tag == event %}
+
+    {%- if collections.events %}
+    {%- set nextEvent = collections.events | getNextCollectionItem(page) %}
+    {%- set previousEvent = collections.events | getPreviousCollectionItem(page) %}
+    {%- if nextEvent or previousEvent %}
+    <ul>
+    {%- if nextEvent %}<li>Suivant : <a href="{{ nextEvent.url | url }}">{{ nextEvent.data.title }}</a></li>{% endif %}
+    {%- if previousEvent %}<li>Précédent: <a href="{{ previousEvent.url | url }}">{{ previousEvent.data.title }}</a></li>{% endif %}
+    </ul>
+    {%- endif %}
+    {%- endif %}
+
+{% endif %}
+
     </main>
 
     {%- include "partials/footer.njk" %}
