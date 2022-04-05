@@ -23,6 +23,10 @@
 
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
 
+      <h1>{{ title }}</h1>
+
+      <p>{{ description | safe }}</p>
+
 
       {{ content | safe }}
     </main>
