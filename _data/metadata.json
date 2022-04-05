@@ -17,5 +17,12 @@
     "name": "a11yMTL",
     "email": "a11ymtl@gmail.com",
     "url": "https://a11ymtl.net/apropos/"
+  },
+  "socials": {
+    "facebook" : "https://www.facebook.com/A11YMTL/",
+    "linkedin" : "https://www.linkedin.com/groups/9162796/",
+    "twitter" : "https://twitter.com/a11yMTL",
+    "youtube" : "https://www.youtube.com/user/a11yMTL",
+    "meetup" : "https://www.meetup.com/a11yMTL/"
   }
 }

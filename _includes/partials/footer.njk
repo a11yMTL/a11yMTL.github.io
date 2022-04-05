@@ -1,0 +1,7 @@
+<footer>
+  <ul>
+    {% for site, url in metadata.socials %}
+    <li><a href="{{ url }}">{{ site | capitalize }}</a></li>
+    {%- endfor %}
+  </ul>
+</footer>
