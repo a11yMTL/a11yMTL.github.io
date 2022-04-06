@@ -1,16 +1,34 @@
 ---
 layout: layouts/base.njk
 title: Bienvenue sur le site de a11yMTL
-description: Des conférences à Montréal pour partager des retours d’expériences et des bonnes pratiques autour de l’accessibilité du Web et de l’inclusion numérique.
+description: Les conférences en ligne et en présentiel pour partager des retours d’expériences et des bonnes pratiques autour de l’accessibilité du Web et de l’inclusion numérique.
 eleventyNavigation:
   key: Accueil
   order: 1
 ---
 {% set maxEvent = collections.events.length | min(3) %}
-<h1>{% if maxEvent == 1 %}Le dernier événement{% else %}Les {{ maxEvent }} derniers événements{% endif %}</h1>
+<h2>{% if maxEvent == 1 %}Le dernier événement{% else %}Les {{ maxEvent }} derniers événements{% endif %}</h2>
 
 {% set eventslist = collections.events | head(-3) %}
 {% set eventslistCounter = collections.events | length %}
 {% include "eventslist.njk" %}
 
 <p>Vous trouverez d'autres événements dans <a href="{{ '/events/' | url }}">les archives</a>.</p>
+
+<h2>Événements à venir</h2>
+
+<h3>La sémantique et les lecteurs d'écran</h3>
+<p>Mai 19, 2022 - GAAD conférence présentée par Rocío Alvarado en ligne - Français</p>
+
+<h3>Juin à déterminer</h3>
+<p>À venir</p>
+
+<h3>Septembre à déterminer</h3>
+<p>À venir</p>
+
+
+<h2>Devenir commanditaires</h2>
+<p>Vous souhaitez devenir sponsor de notre communauté de pratique a11yMTL et partager votre engagement ?</p>
+
+<p>CTA : Devenir commanditaires</p>
+

@@ -1,12 +1,14 @@
-<ol reversed class="eventlist" style="counter-reset: start-from {{ (eventslistCounter or eventslist.length) + 1 }}">
+<ol>
 {% for event in eventslist | reverse %}
-  <li class="eventlist-item{% if event.url == url %} eventlist-item-active{% endif %}">
+  <li>
     <a href="{{ event.url | url }}" class="eventlist-link">{% if event.data.title %}{{ event.data.title }}{% else %}<code>{{ event.url }}</code>{% endif %}</a>
     <time class="eventlist-date" datetime="{{ event.date | htmlDateString }}">{{ event.date | readableDateFr }}</time>
-    {% for tag in event.data.tags | filterTagList %}
-      {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-      <a href="{{ tagUrl | url }}" class="event-tag">{{ tag }}</a>
-    {% endfor %}
+    <ul>
+      {% for tag in event.data.tags | filterTagList %}
+        {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+        <li style="margin-top: 5px;"><a href="{{ tagUrl | url }}" class="event-tag">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
   </li>
 {% endfor %}
 </ol>
