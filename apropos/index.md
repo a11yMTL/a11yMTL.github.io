@@ -16,7 +16,6 @@ Depuis 2010, a11yMTL s'est dédié à faire connaître les besoins et les béné
 - [Heather Martin (elle)](https://www.linkedin.com/in/martinheather/)
 - [Arthur Rigaud (il)](https://www.linkedin.com/in/arthurrigaud/)
 - [Dennis Boudreau (il)](https://www.linkedin.com/in/dboudreau)
-- Guillaume D’amour (il)
 - [Amanda Martinez (elle)](https://www.linkedin.com/in/amanda-martinez-b6287889/)
 
 Pour toutes questions, suggestions ou commentaires, veuillez nous trouver sur un des réseaux sociaux et l'un d'entre nous vous répondra dès que possible.
