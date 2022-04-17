@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "a11yMTL website built with the base eleventy template",
   "scripts": {
-    "build": "npm-run-all tailwind-build --parallel eleventy",
-    "gh-build": "npm-run-all tailwind-build --parallel gh-pages",
+    "build": "npm-run-all eleventy --sequential tailwind-build ",
+    "gh-build": "npm-run-all tailwind-build --sequential gh-pages",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-    "watch:tailwind": "npx postcss css/global.pcss --o _site/css/a11ymtl.css --watch",
-    "tailwind-build": "npx postcss css/global.pcss --output _site/css/a11ymtl.css",
+    "watch:tailwind": "npx postcss _src/_css/global.pcss --o _site/css/a11ymtl.css --watch",
+    "tailwind-build": "npx postcss _src/_css/global.pcss --output _site/css/a11ymtl.css",
     "eleventy": "npx eleventy",
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "start": "npm-run-all --parallel watch:*",
@@ -35,7 +35,9 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "luxon": "^2.3.1",
     "markdown-it": "^12.3.2",
-    "markdown-it-anchor": "^8.4.1"
+    "markdown-it-anchor": "^8.4.1",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",
