@@ -1,51 +1,40 @@
   {% include "partials/head.njk" %}
+
   <body class="bg-white text-black antialiased dark:bg-gray-900 dark:text-white">
+  	<div class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+  		<div class="flex h-screen flex-col justify-between">
 
-    {% include "partials/header.njk" %}
+  			{% include "partials/header.njk" %}
 
-    <main{% if templateClass %} class="{{ templateClass }} px-4"{% else %} class="px-4"{% endif %}>
+  			<main{% if templateClass %} class="{{ templateClass }} mb-auto" {% else %} class="mb-auto" {% endif %}>
 
+				<div class="space-y-2 pt-6 pb-8 md:space-y-5">
+					<h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">{{ title }}</h1>
+					<p class="text-lg leading-7 text-gray-500 dark:text-gray-400">{{ description }}</p>
+				</div>
 
-     <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
-      {{ title }}
-    </h1>
+  				{{ content | safe }}
 
+  				{% if tag == event %}
 
-      {% if tag == event %}
+  				{%- if collections.events %}
+  				{%- set nextEvent = collections.events | getNextCollectionItem(page) %}
+  				{%- set previousEvent = collections.events | getPreviousCollectionItem(page) %}
+  				{%- if nextEvent or previousEvent %}
+  				<ul>
+  					{%- if nextEvent %}<li>Suivant : <a href="{{ nextEvent.url | url }}">{{ nextEvent.data.title }}</a></li>{% endif %}
+  					{%- if previousEvent %}<li>Précédent: <a href="{{ previousEvent.url | url }}">{{ previousEvent.data.title }}</a></li>{% endif %}
+  				</ul>
+  				{%- endif %}
+  				{%- endif %}
 
-        <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDateFr }}</time>
-        <ul>
-        {%- for tag in tags | filterTagList -%}
-        {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-        <li><a href="{{ tagUrl | url }}" class="event-tag">{{ tag }}</a></li>
-        {%- endfor %}
-        </ul>
+  				{% endif %}
 
-      {% endif %}
+  				</main>
 
-      <p>{{ description | safe }}</p>
-
-      {{ content | safe }}
-
-{% if tag == event %}
-
-    {%- if collections.events %}
-    {%- set nextEvent = collections.events | getNextCollectionItem(page) %}
-    {%- set previousEvent = collections.events | getPreviousCollectionItem(page) %}
-    {%- if nextEvent or previousEvent %}
-    <ul>
-    {%- if nextEvent %}<li>Suivant : <a href="{{ nextEvent.url | url }}">{{ nextEvent.data.title }}</a></li>{% endif %}
-    {%- if previousEvent %}<li>Précédent: <a href="{{ previousEvent.url | url }}">{{ previousEvent.data.title }}</a></li>{% endif %}
-    </ul>
-    {%- endif %}
-    {%- endif %}
-
-{% endif %}
-
-    </main>
-
-    {%- include "partials/footer.njk" %}
-
-    <!-- Current page: {{ page.url | url }} -->
+  				{%- include "partials/footer.njk" %}
+  		</div>
+  	</div>
   </body>
-</html>
+
+  </html>
