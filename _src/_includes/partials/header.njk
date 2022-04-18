@@ -1,10 +1,50 @@
-    <header>
-      <p class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></p>
-
-      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      <ul class="nav">
-      {%- for entry in collections.all | eleventyNavigation %}
-        <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
-      {%- endfor %}
-      </ul>
-    </header>
+	<header class="flex items-center justify-between py-10">
+		<div>
+			<a href="{{ '/' | url }}">
+				<div class="flex items-center justify-between">
+					<div class="mr-3"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="344.564 330.278 111.737 91.218" width="53.87" height="43.61">
+							<defs>
+								<linearGradient id="logo_svg__b" gradientUnits="userSpaceOnUse" x1="420.97" y1="331.28" x2="420.97" y2="418.5">
+									<stop style="stop-color:#06b6d4;stop-opacity:1" offset="0%"></stop>
+									<stop style="stop-color:#67e8f9;stop-opacity:1" offset="100%"></stop>
+								</linearGradient>
+								<linearGradient id="logo_svg__d" gradientUnits="userSpaceOnUse" x1="377.89" y1="331.28" x2="377.89" y2="418.5">
+									<stop style="stop-color:#06b6d4;stop-opacity:1" offset="0%"></stop>
+									<stop style="stop-color:#67e8f9;stop-opacity:1" offset="100%"></stop>
+								</linearGradient>
+								<path d="M453.3 331.28v28.57l-64.66 58.65v-30.08l64.66-57.14Z" id="logo_svg__a"></path>
+								<path d="M410.23 331.28v28.57l-64.67 58.65v-30.08l64.67-57.14Z" id="logo_svg__c"></path>
+							</defs>
+							<use xlink:href="#logo_svg__a" fill="url(#logo_svg__b)"></use>
+							<use xlink:href="#logo_svg__c" fill="url(#logo_svg__d)"></use>
+						</svg>
+					</div>
+					<div class="h-6 text-2xl font-semibold sm:block">{{ metadata.title }}</div>
+				</div>
+			</a>
+		</div>
+		<div class="flex items-center text-base leading-5">
+			<ul class="hidden sm:block">
+				{%- for entry in collections.all | eleventyNavigation %}
+				<li class="{% if entry.url == page.url %}active{% endif %} p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4 inline"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+				{%- endfor %}
+			</ul>
+			<div class="sm:hidden">
+				<button type="button" class="ml-1 mr-1 h-8 w-8 rounded py-1" aria-label="Toggle Menu">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-900 dark:text-gray-100">
+						<path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+					</svg>
+				</button>
+				<div class="fixed top-24 right-0 z-10 h-full w-full transform bg-gray-200 opacity-95 duration-300 ease-in-out dark:bg-gray-800 translate-x-full">
+					<button type="button" aria-label="toggle modal" class="fixed h-full w-full cursor-auto focus:outline-none"></button>
+					<nav class="fixed mt-8 h-full">
+						<ul>
+							{%- for entry in collections.all | eleventyNavigation %}
+							<li class="{% if entry.url == page.url %}active{% endif %}text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+							{%- endfor %}
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
