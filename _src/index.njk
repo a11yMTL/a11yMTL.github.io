@@ -6,14 +6,6 @@ eleventyNavigation:
   key: Accueil
   order: 1
 ---
-{% set maxEvent = collections.events.length | min(3) %}
-<h2 class="mt-8 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-5xl md:leading-14">{% if maxEvent == 1 %}Le dernier événement{% else %}Les {{ maxEvent }} derniers événements{% endif %}</h2>
-
-{% set eventslist = collections.events | head(-3) %}
-{% set eventslistCounter = collections.events | length %}
-{% include "eventslist.njk" %}
-
-<p>Vous trouverez d'autres événements dans <a href="{{ '/events/' | url }}">les archives</a>.</p>
 
 <h2 class="mt-8 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-5xl md:leading-14">Événements à venir</h2>
 
@@ -26,6 +18,16 @@ eleventyNavigation:
 <h3 class="mt-5 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">Septembre à déterminer</h3>
 <p>À venir</p>
 
+
+
+{% set maxEvent = collections.events.length | min(3) %}
+<h2 class="mt-8 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-5xl md:leading-14">{% if maxEvent == 1 %}Le dernier événement{% else %}Les {{ maxEvent }} derniers événements{% endif %}</h2>
+
+{% set eventslist = collections.events | head(-3) %}
+{% set eventslistCounter = collections.events | length %}
+{% include "eventslist.njk" %}
+
+<p>Vous trouverez d'autres événements dans <a href="{{ '/events/' | url }}">les archives</a>.</p>
 
 <h2 class="mt-8 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-5xl md:leading-14">Devenir commanditaires</h2>
 <p>Vous souhaitez devenir sponsor de notre communauté de pratique a11yMTL et partager votre engagement ?</p>
