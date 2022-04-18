@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 1
 ---
 {% set maxEvent = collections.events.length | min(3) %}
-<h2>{% if maxEvent == 1 %}Le dernier événement{% else %}Les {{ maxEvent }} derniers événements{% endif %}</h2>
+<h2 class="mt-8 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-5xl md:leading-14">{% if maxEvent == 1 %}Le dernier événement{% else %}Les {{ maxEvent }} derniers événements{% endif %}</h2>
 
 {% set eventslist = collections.events | head(-3) %}
 {% set eventslistCounter = collections.events | length %}
@@ -15,17 +15,17 @@ eleventyNavigation:
 
 <p>Vous trouverez d'autres événements dans <a href="{{ '/events/' | url }}">les archives</a>.</p>
 
-<h2>Événements à venir</h2>
+<h2 class="mt-8 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-5xl md:leading-14">Événements à venir</h2>
 
-<h3>La sémantique et les lecteurs d'écran</h3>
+<h3 class="mt-5 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">La sémantique et les lecteurs d'écran</h3>
 <p>Mai 19, 2022 - GAAD conférence présentée par Rocío Alvarado en ligne - Français</p>
 
-<h3>Juin à déterminer</h3>
+<h3 class="mt-5 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">Juin à déterminer</h3>
 <p>À venir</p>
 
-<h3>Septembre à déterminer</h3>
+<h3 class="mt-5 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">Septembre à déterminer</h3>
 <p>À venir</p>
 
 
-<h2>Devenir commanditaires</h2>
+<h2 class="mt-8 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-5xl md:leading-14">Devenir commanditaires</h2>
 <p>Vous souhaitez devenir sponsor de notre communauté de pratique a11yMTL et partager votre engagement ?</p>
