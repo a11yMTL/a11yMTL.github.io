@@ -1,32 +1,11 @@
-	<header class="flex items-center justify-between py-10">
-		<div>
-			<a href="{{ '/' | url }}">
-				<div class="flex items-center justify-between">
-					<div class="mr-3"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="344.564 330.278 111.737 91.218" width="53.87" height="43.61">
-							<defs>
-								<linearGradient id="logo_svg__b" gradientUnits="userSpaceOnUse" x1="420.97" y1="331.28" x2="420.97" y2="418.5">
-									<stop style="stop-color:#06b6d4;stop-opacity:1" offset="0%"></stop>
-									<stop style="stop-color:#67e8f9;stop-opacity:1" offset="100%"></stop>
-								</linearGradient>
-								<linearGradient id="logo_svg__d" gradientUnits="userSpaceOnUse" x1="377.89" y1="331.28" x2="377.89" y2="418.5">
-									<stop style="stop-color:#06b6d4;stop-opacity:1" offset="0%"></stop>
-									<stop style="stop-color:#67e8f9;stop-opacity:1" offset="100%"></stop>
-								</linearGradient>
-								<path d="M453.3 331.28v28.57l-64.66 58.65v-30.08l64.66-57.14Z" id="logo_svg__a"></path>
-								<path d="M410.23 331.28v28.57l-64.67 58.65v-30.08l64.67-57.14Z" id="logo_svg__c"></path>
-							</defs>
-							<use xlink:href="#logo_svg__a" fill="url(#logo_svg__b)"></use>
-							<use xlink:href="#logo_svg__c" fill="url(#logo_svg__d)"></use>
-						</svg>
-					</div>
-					<div class="h-6 text-2xl font-semibold sm:block">{{ metadata.title }}</div>
-				</div>
-			</a>
-		</div>
-		<div class="flex items-center text-base leading-5">
+	<header class="flex justify-between py-10 bg-black text-white">
+
+		<p class="h-6 text-2xl font-semibold pl-4 mb-4"><a href="{{ '/' | url }}"><i class="fa-solid fa-universal-access mr-3 text-6xl" aria-hidden="true"></i>{{ metadata.title }}</a></p>
+
+		<nav class="flex">
 			<ul class="hidden sm:block">
 				{%- for entry in collections.all | eleventyNavigation %}
-				<li class="{% if entry.url == page.url %}active{% endif %} p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4 inline"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+				<li class="{% if entry.url == page.url %}active{% endif %} p-1 font-medium text-white-900 dark:text-gray-100 sm:p-4 inline"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
 				{%- endfor %}
 			</ul>
 			<div class="sm:hidden">
@@ -46,5 +25,5 @@
 					</nav>
 				</div>
 			</div>
-		</div>
+		</nav>
 	</header>
