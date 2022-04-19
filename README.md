@@ -48,6 +48,8 @@ DEBUG=* npx eleventy
 
 Based on the [11ty / eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) template.
 
+Please see our [DEVELOPMENT.md](.github/DEVELOPMENT.md) page for more detailed instructions.
+
 ### Implementation Notes
 
 * `about/index.md` shows how to add a content page.
