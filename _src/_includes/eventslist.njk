@@ -1,28 +1,28 @@
-<ul class="divide-y divide-gray-200 dark:divide-gray-700">
+<section class="divide-y divide-gray-200 dark:divide-gray-700">
 	{% for event in eventslist | reverse %}
-	<li class="py-12">
+	<div class="py-12">
 		<article>
-			<div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-				<dl>
-					<dt>Date de l'événement&nbsp;:</dt>
-					<dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400"><time datetime="{{ event.date | htmlDateString }}">{{ event.date | readableDateFr }}</time></dd>
-				</dl>
+			<div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0 xl:gap-x-12">
 				<div class="space-y-5 xl:col-span-3">
 					<div class="space-y-6">
-						<div>
-							<h2 class="text-2xl font-bold leading-8 tracking-tight"><a class="text-gray-900 dark:text-gray-100" href="{{ event.url | url }}">{% if event.data.title %}{{ event.data.title }}{% else %}<code>{{ event.url }}</code>{% endif %}</a></h2>
-							<ul class="flex flex-wrap">
-								{% for tag in event.data.tags | filterTagList %}
-								{% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-								<li><a href="{{ tagUrl | url }}" class="tags">{{ tag }}</a></li>
-								{% endfor %}
-							</ul>
-						</div>
+						<h2 class="event-h2"><a class="text-gray-900 dark:text-gray-100" href="{{ event.url | url }}">{% if event.data.title %}{{ event.data.title }}{% else %}<code>{{ event.url }}</code>{% endif %}</a></h2>
 						<div class="prose max-w-none text-gray-500 dark:text-gray-400">{{ event.data.description | safe }}</div>
 					</div>
 				</div>
+				<div>					
+					<dl>
+						<dt>Date de l'événement&nbsp;:</dt>
+						<dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400"><time datetime="{{ event.date | htmlDateString }}">{{ event.date | readableDateFr }}</time></dd>
+					</dl>
+					<ul class="flex flex-wrap">
+						{% for tag in event.data.tags | filterTagList %}
+						{% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+						<li><a href="{{ tagUrl | url }}" class="tags">{{ tag }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
 			</div>
 		</article>
-	</li>
+	</div>
 	{% endfor %}
-</ul>
+</section>
