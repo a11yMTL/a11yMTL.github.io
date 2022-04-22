@@ -12,11 +12,9 @@ pagination:
   addAllPagesToCollections: true
 layout: layouts/base.njk
 eleventyComputed:
-  title: Étiquettes “{{ tag }}”
+  title: Étiqueté “{{ tag }}”
 permalink: /tags/{{ tag | slug }}/
 ---
-<h1>Étiqueté “{{ tag }}”</h1>
-
 {% set eventslist = collections[ tag ] %}
 {% include "eventslist.njk" %}
 
