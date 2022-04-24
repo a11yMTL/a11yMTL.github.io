@@ -1,33 +1,34 @@
 ---
 layout: layouts/base.njk
-title: Bienvenue sur le site de a11yMTL
+title: La communauté d’accessibilité numérique à Montréal
 description: Les conférences en ligne et en présentiel pour partager des retours d’expériences et des bonnes pratiques autour de l’accessibilité du Web et de l’inclusion numérique.
 eleventyNavigation:
   key: Accueil
   order: 1
 ---
 
-<h2 class="mt-8 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-5xl md:leading-14">Événements à venir</h2>
+<h2 class="h2">Événements à venir</h2>
 
-<h3 class="mt-5 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">La sémantique et les lecteurs d'écran</h3>
-<p>Mai 19, 2022 - GAAD conférence présentée par Rocío Alvarado en ligne - Français</p>
+<h3 class="h3">La sémantique et les lecteurs d'écran</h3>
+<p>19&nbsp;mai&nbsp;2022 à 19&nbsp;h&nbsp;00 - GAAD conférence présentée par Rocío Alvarado - en ligne - Français</p>
 
-<h3 class="mt-5 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">Juin à déterminer</h3>
-<p>À venir</p>
+<h3 class="h3">Juin à venir</h3>
+<p>6&nbsp;juin&nbsp;2022 à 12&nbsp;h&nbsp;00 - Présentation par Stéphanie Walter - en ligne - Français</p>
 
-<h3 class="mt-5 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">Septembre à déterminer</h3>
-<p>À venir</p>
+<h3 class="h3">Septembre à déterminer</h3>
+<p>À déterminer</p>
 
 
 
 {% set maxEvent = collections.events.length | min(3) %}
-<h2 class="mt-8 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-5xl md:leading-14">{% if maxEvent == 1 %}Le dernier événement{% else %}Les {{ maxEvent }} derniers événements{% endif %}</h2>
+<h2 class="h2">{% if maxEvent == 1 %}Le dernier événement{% else %}Les {{ maxEvent }} derniers événements{% endif %}</h2>
 
 {% set eventslist = collections.events | head(-3) %}
 {% set eventslistCounter = collections.events | length %}
 {% include "eventslist.njk" %}
 
-<p>Vous trouverez d'autres événements dans <a href="{{ '/events/' | url }}">les archives</a>.</p>
+<p>Vous trouverez d'autres événements dans <a href="{{ '/archive/' | url }}">les archives</a>.</p>
 
-<h2 class="mt-8 text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-5xl md:leading-14">Devenir commanditaires</h2>
-<p>Vous souhaitez devenir sponsor de notre communauté de pratique a11yMTL et partager votre engagement ?</p>
+<h2 class="h2">Devenir commanditaires</h2>
+<p>Vous souhaitez devenir commanditaire de notre communauté de pratique a11yMTL et partager votre engagement ?</p>
+<p><a href="mailto:a11ymtl@gmail.com">Devenir commanditaires</a></p>

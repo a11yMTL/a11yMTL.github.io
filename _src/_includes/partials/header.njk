@@ -1,14 +1,14 @@
-	<header class="flex justify-between py-10 bg-black text-white">
+	<header class="sm:block md:flex md:justify-between bg-black text-white">
 
-		<p class="h-6 text-2xl font-semibold pl-4 mb-4"><a href="{{ '/' | url }}"><i class="fa-solid fa-universal-access mr-3 text-6xl" aria-hidden="true"></i>{{ metadata.title }}</a></p>
+		<div class="text-2xl font-semibold py-4 pl-4"><a href="{{ '/' | url }}"><img class="mx-auto" src="{{ '/img/a11yMTL-inverted.png' | url }}" alt="{{ metadata.title }}"></a></div>
 
-		<nav class="flex">
-			<ul class="hidden sm:block">
+		<nav class="py-12 text-center">
+			<ul class="sm:block">
 				{%- for entry in collections.all | eleventyNavigation %}
-				<li class="{% if entry.url == page.url %}active{% endif %} p-1 font-medium text-white-900 dark:text-gray-100 sm:p-4 inline"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
+				<li class="{% if entry.url == page.url %}active{% endif %} nav-item"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
 				{%- endfor %}
 			</ul>
-			<div class="sm:hidden">
+			<!--<div class="sm:hidden">
 				<button type="button" class="ml-1 mr-1 h-8 w-8 rounded py-1" aria-label="Toggle Menu">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-900 dark:text-gray-100">
 						<path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
@@ -24,6 +24,6 @@
 						</ul>
 					</nav>
 				</div>
-			</div>
+			</div>-->
 		</nav>
 	</header>
