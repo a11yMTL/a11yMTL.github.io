@@ -1,10 +1,13 @@
 ---
 permalink: /tags/
 layout: layouts/base.njk
+templateClass: temp-gen
 ---
 <h1 class="h1">Tags</h1>
 
+<ul>
 {% for tag in collections.tagList %}
   {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-  <a href="{{ tagUrl | url }}" class="event-tag">{{ tag }}</a>
+  <li><a href="{{ tagUrl | url }}" class="event-tag">{{ tag }}</a></li>
 {% endfor %}
+</ul>
