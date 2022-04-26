@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 title: À propos de nous
 description: a11yMTL est un lieu où ceux qui s'intéressent à l'accessibilité numérique peuvent se réunir et apprendre.
-templateClass: tmpl-event
+templateClass: temp-gen
 eleventyNavigation:
   key: À propos de nous
   order: 3
