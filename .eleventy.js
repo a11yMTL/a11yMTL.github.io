@@ -9,7 +9,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 module.exports = function(eleventyConfig) {
   // Copy the `img` and `css` folders to the output
   eleventyConfig.addPassthroughCopy({ "./_src/_img" : "img" });
-  // eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy({ "./_src/CNAME" : "CNAME" });
 
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
