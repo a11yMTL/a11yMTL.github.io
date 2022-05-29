@@ -1,4 +1,4 @@
-# a11yMTL.net
+# a11yMTL.org
 
 a11yMTL site built with the [Eleventy](https://github.com/11ty/eleventy) static site generator.
 
