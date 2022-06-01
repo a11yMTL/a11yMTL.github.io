@@ -6,19 +6,10 @@ eleventyNavigation:
   key: Accueil
   order: 1
 ---
-<h2 class="h2">Événements à venir</h2>
+{% set maxEvent = collections.events.length | min(5) %}
+<h2 class="h2">Les événements</h2>
 
-<h3 class="h3">Guide du designer pour documenter l'accessibilité et les interactions utilisateurs</h3>
-<p>6&nbsp;juin&nbsp;2022 à 12&nbsp;h&nbsp;00 - Présentation par Stéphanie Walter - en ligne - Français</p>
-<p>Stéphanie nous expliquera pourquoi, quoi et comment les designers peuvent documenter les différents aspects des exigences en matière d'accessibilité et d'interactions utilisateurs, afin de créer des produits de meilleure qualité et plus inclusifs.</p>
-
-<h3 class="h3">Septembre plus de détail à venir</h3>
-<p>Présentation par Myriam Jessier - en ligne - Français</p>
-
-{% set maxEvent = collections.events.length | min(3) %}
-<h2 class="h2">{% if maxEvent == 1 %}Le dernier événement{% else %}Les {{ maxEvent }} derniers événements{% endif %}</h2>
-
-{% set eventslist = collections.events | head(-3) %}
+{% set eventslist = collections.events %}
 {% set eventslistCounter = collections.events | length %}
 {% include "eventslist.njk" %}
 
