@@ -11,7 +11,7 @@
 						{% else %}
 						<h3 class="event-h2"><a href="{{ event.url | url }}">{% if event.data.title %}{{ event.data.title }}{% else %}<code>{{ event.url }}</code>{% endif %}</a></h3>
 						{% endif %}
-						<div class="prose max-w-none text-gray-500 dark:text-gray-400">{{ event.data.description | safe }}</div>
+						<div class="prose max-w-none text-gray-500 dark:text-gray-400">{{ event.data.summary | safe }}</div>
 					</div>
 				</div>
 				<div>					
