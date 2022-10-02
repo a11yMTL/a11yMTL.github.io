@@ -13,6 +13,7 @@ Depuis 2010, a11yMTL s'est dédié à faire connaître les besoins et les béné
 - [Shawn Thompson (il)](https://www.linkedin.com/in/shawn-thompson-aba0159b/)
 - [Rocío Alvarado (elle)](https://www.linkedin.com/in/rocioalvarado/)
 - [Carolina Crespo (elle)](https://www.linkedin.com/in/carolina-crespo-cpwa-a1a36467/)
+- [Émilie Viau (elle)](https://www.linkedin.com/in/emilie-viau-12a410167)
 - [Heather Martin (elle)](https://www.linkedin.com/in/martinheather/)
 - [Arthur Rigaud (il)](https://www.linkedin.com/in/arthurrigaud/)
 - [Dennis Boudreau (il)](https://www.linkedin.com/in/dboudreau)
