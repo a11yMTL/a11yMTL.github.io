@@ -7,7 +7,7 @@ a11yMTL site built with the [Eleventy](https://github.com/11ty/eleventy) static 
 ### 1. Clone this Repository
 
 ```
-git clone https://github.com/accessibility/a11ymtl.git
+git clone https://github.com/a11yMTL/a11yMTL.github.io.git
 ```
 
 ### 2. Navigate to the directory
