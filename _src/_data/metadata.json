@@ -1,22 +1,22 @@
 {
   "title": "a11yMTL",
-  "url": "https://a11ymtl.net/",
+  "url": "https://a11ymtl.org/",
   "language": "fr",
   "description": "La communauté de l'accessibilité à Montréal",
   "feed": {
     "subtitle": "La communauté de l'accessibilité à Montréal",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://a11ymtl.net/"
+    "id": "https://a11ymtl.org/"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://a11ymtl.net/feed/feed.json"
+    "url": "https://a11ymtl.org/feed/feed.json"
   },
   "author": {
     "name": "a11yMTL",
     "email": "a11ymtl@gmail.com",
-    "url": "https://a11ymtl.net/apropos/"
+    "url": "https://a11ymtl.org/apropos/"
   },
   "socials": {
     "facebook" : "https://www.facebook.com/A11YMTL/",
